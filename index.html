@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EbookReader</title>
+    <!--Styles-->
+    <link rel="stylesheet" href="lib/bootstrap-5.3.3/css/bootstrap.min.css">
+    <!--Scripts-->
+    <script src="lib/bootstrap-5.3.3/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/epubjs/epub.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="input-group mb-3">
+            <input type="file" class="form-control" id="inputGroupFile02">
+            <label class="input-group-text" for="inputGroupFile02">Upload</label>
+        </div>
+        <div id="area"></div>
+    </div>
+
+    <script>
+        var book = ePub('/src/apologia-de-socrates.epub', {});
+        var rendition = book.renderTo("area", { method: "default", width: "100%", height: "100%" });
+        var displayed = rendition.display();
+    </script>
+</body>
+
+</html>
